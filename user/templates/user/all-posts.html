@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View All Posts</title>
+  <style>
+ .post {
+     border : solid 1px #000;
+     box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
+     width: 50vw;
+     padding: 2em;
+     margin-top: 1em;
+}
+  </style>
+</head>
+<body>
+<h1>All Posts</h1>
+{% for post in posts %}
+<div class="post">
+  <p>{{post.text}}</p>
+  <ul>
+    <li>By - {{post.author}}</li>
+    <li>Created at - {{post.created_at}}</li>
+    <li>Updated at - {{post.updated_at}}</li>
+  </ul>
+</div>
+{% endfor %}
+</body>
+</html>

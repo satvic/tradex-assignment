@@ -1,0 +1,27 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Post</title>
+</head>
+<style>
+   .post {
+     border : solid 1px #000;
+     box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06);
+     width: 50vw;
+     padding: 2em;
+     margin-top: 1em;
+}
+</style>
+<body>
+<div class="post">
+  <h1>Add Post</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Save</button>
+  </form>
+</div>
+</body>
+</html>
